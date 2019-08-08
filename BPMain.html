@@ -1,0 +1,116 @@
+<!--Burdened Passage
+
+//Summer 2019 project
+//Chris, Joe, Tyler
+//Main Page
+
+/*This page will be the 'homepage' of the game. I would like for this game to have some graphics for it. This
+is mostly just a learning exercise and to revamp the idea of javascript and web development as well as to expand
+our experience portfolios.-->
+
+<html>
+
+<head>
+
+<title>Burdened Passage</title>
+
+<style type="text/css">
+@import url("BP.css");
+</style>
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+
+    <script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+  integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+  crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+
+  <p class = "startScreen" style = "font-size: 3em; text-align: center;">Welcome To Burdened Passage</p>
+  <div id = "intro-box" class = "startScreen">
+   <p id = "intro" class = "startScreen">In a time long ago; in a land overran with monsters and demons.
+ There was but one individual who could hold their own against the evil that walked
+  the land. In the world's time of need, that being stood their ground to battle
+ the monsters that threatened to take their home.....<br /><br /><br />
+ A plan was made by the most creative and intelligent minds that this world had come to know.
+ This plan was for the hero to enter the dungeons that the beasts called their home and slay
+ their leader. Our story begins here...</p>
+ </div>
+
+<!-- Start Game Button -->
+ <div id = "button" class = "startScreen" style =
+ "border: 3px solid #00ff00;
+  border-radius: 5px;
+  width: 10%;
+  height: 7%;
+  padding: 0px;
+  margin-left: 65.5%;
+  text-align: center;
+  font-size: 1.5em">
+ <p>Start Game</p></div>
+
+<script type = "module" src = "./javascript/main.js">
+</script>
+
+<!-- Main Menu -->
+<div id = "menu" class = "startScreen"><p style = "text-decoration: underline">Main Menu</p>
+  <p id = "newGame" class = "startScreen"><br /><br />New Game</p>
+  <p id = "quit" class = "startScreen">Quit</p>
+</div>
+
+<!-- Main Game Screen -->
+<div class="mainGame">
+
+  <!-- Player Stats -->
+  <div id = 'player'>
+    <div id = 'health'>health</div>
+    <div id = 'attack'>attack</div>
+    <div id = 'defense'>defense</div>
+    <div id = 'potions'>potions</div>
+  </div>
+
+<!-- Visual Game Screen/ Map -->
+  <div id = 'gameScreenHolder'><canvas id = "gameScreen">game</canvas></div>
+
+<!-- Enemy stats -->
+  <div id = 'monster'>
+    <div id = 'mHealth'>monster health</div>
+    <div id = 'mAttack'>monster attack</div>
+    <div id = 'mDef'>monster defense</div>
+  </div>
+
+</div>
+
+</body>
+<script>
+  $("#intro-box").hide().fadeIn(3500);
+  $('.mainGame').hide();
+  $(function(){
+
+    $('#menu').hide();
+
+    $('#button').click(function(){
+      $('#intro-box').hide(300);
+      $('#menu').show(300);
+      $('#newGame').click(function(){
+
+        $('.startScreen').hide(300);
+        $('.mainGame').show(300);
+        //startGame();
+      });
+
+    });
+
+
+
+
+  });
+
+  </script>
+
+</html>
